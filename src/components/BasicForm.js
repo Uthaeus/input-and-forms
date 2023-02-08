@@ -64,6 +64,7 @@ const BasicForm = (props) => {
             onChange={firstNameChangeHandler}
             onBlur={firstNameBlurHandler}
           />
+          {firstNameHasError && <p className="error-text">First Name field cannot be empty.</p>}
         </div>
         <div className={lastNameClasses}>
           <label htmlFor='lastName'>Last Name</label>
@@ -74,6 +75,7 @@ const BasicForm = (props) => {
             onChange={lastNameChangeHandler}
             onBlur={lastNameBlurHandler}
           />
+          {lastNameHasError && <p className="error-text">Last Name field cannot be empty</p>}
         </div>
       </div>
       <div className={emailClasses}>
@@ -85,9 +87,10 @@ const BasicForm = (props) => {
           onChange={emailChangeHandler}
           onBlur={emailBlurHandler}
         />
+        {emailHasError && <p className="error-text">Please enter valid email address</p>}
       </div>
       <div className='form-actions'>
-        <button>Submit</button>
+        <button disabled={!formIsValid}>Submit</button>
       </div>
     </form>
   );

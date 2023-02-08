@@ -30,7 +30,7 @@ const SimpleInput = (props) => {
   const formSubmissionHandler = e => {
     e.preventDefault();
 
-    if (!enteredNameIsValid) {
+    if (!formIsValid) {
       return;
     }
 
